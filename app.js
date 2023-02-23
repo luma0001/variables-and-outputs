@@ -24,8 +24,23 @@ function sub() {
 function display() {
   document.querySelector("#number").textContent = number;
   let messageString = `Taller er nu: ${number}`;
-  document.querySelector("#message").textContent = messageString;
+
+  if (number >= 10) {
+    document.querySelector("#message").textContent =
+      "Tallet er nu 10 eller mere";
+  } else if (number < 0) {
+    document.querySelector("#message").textContent = "Tallet er negativt";
+  } else {
+    document.querySelector("#message").textContent = messageString;
+  }
 }
 
 //Giver en error, da vi har en lokal variabel kalt uden for funktionen!
-console.log(messageString);
+// console.log(messageString);
+
+let num = 11;
+console.log(num);
+
+if (num == 10) {
+  console.log("tallet r 10 eller mindre");
+}
