@@ -23,16 +23,19 @@ function sub() {
 
 function display() {
   document.querySelector("#number").textContent = number;
-  let messageString = `Taller er nu: ${number}`;
+  // let messageString = `Taller er nu: ${number}`;
 
-  if (number >= 10) {
-    document.querySelector("#message").textContent =
-      "Tallet er nu 10 eller mere";
-  } else if (number < 0) {
-    document.querySelector("#message").textContent = "Tallet er negativt";
+  let message = "";
+
+  if (number > 10) {
+    message = "Tallet er nu over 10";
+  } else if (number == 10) {
+    message = "Tallet er 10";
   } else {
-    document.querySelector("#message").textContent = messageString;
+    message = "Tallet er uder 10";
   }
+  console.log("message");
+  document.querySelector("#message").textContent = message;
 }
 
 //Giver en error, da vi har en lokal variabel kalt uden for funktionen!
